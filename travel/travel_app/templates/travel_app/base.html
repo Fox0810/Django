@@ -1,0 +1,234 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title%}{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Bon Voyage template project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/styles/bootstrap5/bootstrap.min.css' %}">
+    <link href="{% static 'travel_app/plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+    <link rel="stylesheet" type="text/css"
+          href="{% static 'travel_app/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/plugins/OwlCarousel2-2.2.1/animate.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/styles/main_styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/styles/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/styles/contact.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'travel_app/styles/about.css' %}">
+
+</head>
+<body>
+
+<div class="super_container">
+
+    <!-- Header -->
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="logo">
+                        <a href="{% url 'index' %}"> <img src="{% static 'travel_app/images/logo.png' %}"
+                                                          alt="Bon Voyage"></a></div>
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+
+                            <nav class="main_nav">
+                                <ul class="d-flex flex-row align-items-start justify-content-start">
+                                    <li class="active"><a href="{% url 'index' %}">Главная</a></li>
+                                    <li><a href="{% url 'tour' %}">Туры</a></li>
+                                    <li><a href="{% url 'load' %}">Туристам</a></li>
+                                    <li><a href="{% url 'about' %}">О нас</a></li>
+                                    <li><a href="{% url 'news' %}">Новости</a></li>
+                                    <li><a href="{% url 'contacts' %}">Контакты</a>
+                                </ul>
+                            </nav>
+
+                            <div class="col-4 d-flex justify-content-end align-items-center">
+                                <a class="text-muted" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                         stroke-linejoin="round" class="mx-3">
+                                        <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                                        <line x1="21" y1="21" x2="15.8" y2="15.8"></line>
+                                    </svg>
+                                </a>
+                                {% if request.user.is_authenticated %}
+                                <a class="btn btn-sm btn-outline-secondary" href="{% url 'add_item' %}">New article</a>
+                                <a class="btn btn-sm btn-outline-secondary" href="#">{{ request.user }}</a>
+                                <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">Logout</a>
+                                {% else %}
+                                <a class="btn btn-sm btn-outline-secondary" href="{% url 'login' %}">Sign up</a>
+                                <a class="btn btn-sm btn-outline-secondary" href="{% url 'registration' %}">Sign in</a>
+                                {% endif %}
+
+                            </div>
+
+                            <!-- Hamburger -->
+
+                            <div class="hamburger ml-auto">
+                                <i class="fa fa-bars" aria-hidden="true"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_social d-flex flex-row align-items-center justify-content-start">
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <div class="menu">
+        <div class="menu_header d-flex flex-row align-items-center justify-content-start">
+            <div class="menu_logo"><a href="#">Bon Voyage</a></div>
+            <div class="menu_close_container ml-auto">
+                <div class="menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu_content">
+            <ul>
+                <li><a href="#">Главная</a></li>
+                <li><a href="#">Туры</a></li>
+                <li><a href="#">Туристам</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="#">Новости</a></li>
+                <li><a href="#">Контакты</a></li>
+            </ul>
+        </div>
+        <div class="menu_social">
+            <div class="menu_phone ml-auto">Тел: +37517 678 33 18</div>
+            <ul class="d-flex flex-row align-items-start justify-content-start">
+                <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    {% block load %}{% endblock %}
+    {% block menu %}{% endblock %}
+    {% block content%} {% endblock content %}
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="parallax_background parallax-window" data-parallax="scroll"
+             data-image-src="{% static 'travel_app/images/footer_1.jpg' %}" data-speed="0.8"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="newsletter">
+                        <div class="newsletter_title_container text-center">
+                            <div class="newsletter_title">Подпишитеcь на нашу рассылку, чтобы быть в курсе последних
+                                тенденций и новостей
+                            </div>
+                            <div class="newsletter_subtitle">Присоединяйтесь к нам сейчас</div>
+                        </div>
+                        <div class="newsletter_form_container">
+                            <form action="#"
+                                  class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between"
+                                  id="newsletter_form">
+                                <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+                                    <div><input type="text" class="newsletter_input newsletter_input_name"
+                                                id="newsletter_input_name" placeholder="Имя" required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                    <div><input type="email" class="newsletter_input newsletter_input_email"
+                                                id="newsletter_input_email" placeholder="Ваш e-mail"
+                                                required="required">
+                                        <div class="input_border"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="newsletter_button">Подписаться</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer_contact_row">
+                <div class="col-xl-10 offset-xl-1">
+                    <div class="row">
+
+                        <!-- Footer Contact Item -->
+                        <div class="col-xl-4 footer_contact_col">
+                            <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                <div class="footer_contact_icon"><img src="{% static 'travel_app/images/sign.svg' %}"
+                                                                      alt=""></div>
+                                <div class="footer_contact_title">позвоните нам</div>
+                                <div class="footer_contact_list">
+                                    <ul>
+                                        <li>Тел/факс: +37517 678 33 18</li>
+                                        <li>MTC: +37533 567 89 45</li>
+                                        <li>A1: +37529 567 89 45</li>
+                                        <li>Life: +37544 567 89 45</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Contact Item -->
+                        <div class="col-xl-4 footer_contact_col">
+                            <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                <div class="footer_contact_icon"><img
+                                        src="{% static 'travel_app/images/trekking.svg' %}" alt=""></div>
+                                <div class="footer_contact_title">Заходите к нам</div>
+                                <div class="footer_contact_list">
+                                    <ul style="max-width:190px">
+                                        <li>г. Минск, пр-т Победителей, 54 офис 18</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Contact Item -->
+                        <div class="col-xl-4 footer_contact_col">
+                            <div class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+                                <div class="footer_contact_icon"><img src="{% static 'travel_app/images/around.svg' %}"
+                                                                      alt=""></div>
+                                <div class="footer_contact_title">Отправьте нам сообщение</div>
+                                <div class="footer_contact_list">
+                                    <ul>
+                                        <li>bonvoyage@gmail.com</li>
+                                        <li>Office@voyagename.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="{% static 'travel_app/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'travel_app/styles/bootstrap4/popper.js' %}"></script>
+<script src="{% static 'travel_app/styles/bootstrap4/bootstrap.min.js' %}"></script>
+<script src="{% static 'travel_app/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+<script src="{% static 'travel_app/plugins/Isotope/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'travel_app/plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+<script src="{% static 'travel_app/plugins/easing/easing.js' %}"></script>
+<script src="{% static 'travel_app/plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'travel_app/js/custom.js' %}"></script>
+</body>
+</html>

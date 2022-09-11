@@ -1,0 +1,10 @@
+{% block menu %}
+<nav class="main_nav">
+    <ul class="d-flex flex-row align-items-start justify-content-start">
+        <li class="active">
+            {% for el in data %}
+            <a href="{% url 'get_item_category' el.id %}">{{ el.short_name }} </a>
+            {% endfor %}
+    </ul>
+</nav>
+{% endblock %}

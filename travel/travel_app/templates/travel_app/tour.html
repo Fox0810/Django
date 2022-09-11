@@ -1,0 +1,38 @@
+{% extends 'travel_app/base.html' %}
+{% load static %}
+
+{% block title %}Bon Voyage - Tour{% endblock %}
+
+{% block menu %}{% endblock %}
+
+{% block content %}
+ <div class="destinations" id="destinations">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_subtitle">просто удивительные места</div>
+          <div class="section_title"><h2>Популярные направления</h2></div>
+        </div>
+      </div>
+      <div class="row destinations_row">
+        <div class="col">
+          <div class="destinations_container item_grid">
+            {% for data in category %}
+            <!-- Destination -->
+            <div class="destination item">
+              <div class="destination_image">
+                <img src="{{ data.image.url }}" alt="">
+              </div>
+              <div class="destination_content">
+                <div class="destination_title"><a href="#"></a>{{ data.title }}</div>
+
+                <div class="destination_price">{{ data.price }} $</div>
+              </div>
+            </div>
+          {% endfor %}
+         </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

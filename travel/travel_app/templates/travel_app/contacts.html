@@ -1,0 +1,87 @@
+{% extends 'travel_app/base.html' %}
+{% load static %}
+
+{% block title %}Bon Voyage - Contact{% endblock %}
+
+{% block content %}
+<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url(/static/travel_app/images/contact.jpg)"></div>
+	</div>
+
+	<div class="home_search">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="home_search_container">
+                        <div class="home_search_title">Найди путешествие мечты</div>
+                        <div class="home_search_content">
+                            <form action="#" class="home_search_form" id="home_search_form">
+                                <div class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
+                                    <input type="text" class="search_input search_input_1" placeholder="Город вылета" required="required">
+                                    <input type="text" class="search_input search_input_1" placeholder="Страна" required="required">
+                                    <input type="date" class="search_input search_input_2" placeholder="Дата вылета" required="required">
+                                    <input type="number" class="search_input search_input_3" placeholder="Ночей" required="required">
+                                    <input type="number" class="search_input search_input_4" placeholder="Туристы" required="required">
+                                    <button class="home_search_button">Найти</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <div class="contact">
+    <div class="container">
+      <div class="row">
+
+        <!-- Get in touch -->
+        <div class="col-lg-6">
+          <div class="contact_content">
+            <div class="contact_title">Оставьте заявку</div>
+            <div class="contact_text">
+              <p>и мы свяжемся с вами в ближайщее время</p>
+            </div>
+            <div class="contact_list">
+              <ul>
+                <li>
+                  <div>адрес:</div>
+                  <div>г. Минск, пр-т Победителей, 54 офис 18</div>
+                </li>
+                <li>
+                  <div>телефон</div>
+                  <div>+37517-245 67 33</div>
+                </li>
+                <li>
+                  <div>email:</div>
+                  <div>bonvoyage@gmail.com</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-6">
+          <div class="contact_form_container">
+            <form action="#" id="contact_form" class="contact_form">
+              <div style="margin-bottom: 18px"><input type="text" class="contact_input contact_input_name inpt" placeholder="Ф.И.О." required="required"><div class="input_border"></div></div>
+              <div class="row">
+                <div class="col-lg-6" style="margin-bottom: 18px">
+                  <div><input type="text" class="contact_input contact_input_email inpt" placeholder="E-mail" required="required"><div class="input_border"></div></div>
+                </div>
+                <div class="col-lg-6" style="margin-bottom: 18px">
+                  <div><input type="text" class="contact_input contact_input_subject inpt" placeholder="Предмет" required="required"><div class="input_border"></div></div>
+                </div>
+              </div>
+              <div><textarea class="contact_textarea contact_input inpt" placeholder="Сообщение" required="required"></textarea><div class="input_border" style="bottom:3px"></div></div>
+              <button class="contact_button">Отправить</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}

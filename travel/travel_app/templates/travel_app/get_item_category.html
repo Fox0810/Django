@@ -1,0 +1,38 @@
+{% extends 'travel_app/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="news" id="news">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="news_container">
+
+{% for data in data %}
+               <h2>{{ data.title }}</h2>
+      <div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+              <div class="news_post_image"><img src="{{ data.image.url}}" alt=""></div>
+              <div class="news_post_content">
+                <div class="news_post_date d-flex flex-row align-items-end justify-content-start">
+                    <div>{{ data.date }}</div>
+                </div>
+                <div class="news_post_title"><a href="#">{{ data.title }}</a></div>
+                <div class="news_post_category">
+                  <ul>
+                    <li><a href="#">bon voyage</a></li>
+                  </ul>
+                </div>
+                <div class="news_post_text">
+                  <p>{{ data.summary }}</p>
+                    <p>{{ data.text }}</p>
+                    <p>{{ data.price }} $</p>
+                </div>
+              </div>
+            </div>
+    {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    {% endblock %}

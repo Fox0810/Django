@@ -1,0 +1,174 @@
+{% extends 'travel_app/base.html' %}
+{% load static %}
+
+{% block title %}Bon Voyage - About{% endblock %}
+
+{% block content %}
+ <div class="about">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title"><h2>Пару слов о нас</h2></div>
+        </div>
+      </div>
+      <div class="row about_row">
+        <div class="col-lg-6">
+          <div class="about_content">
+            <div class="text_highlight">Наша компания открылась в ноябре 2019 года. К настоящему времени мы успели создать один из лучших и самых посещаемых туристических порталов Беларуси с уникальным контентом, а также открыть несколько уютных офисов. Давайте знакомиться!</div>
+            <div class="about_text">
+              <p>Помимо традиционных туристических направлений, мы активно развиваем нестандартные путешествия, о которых белорусским туристам известно ещё не так много. Это такие страны, как:
+                <b>Индонезия, Доминикана, Вьетнам, Албания, Маврикий, Мальдивы, Куба, Китай, Сейшелы, Мексика, Шри-Ланка</b>. Каждое из направлений заслуживает внимание опытного путешественника. Эти уголки нашей планеты удивляют своей красотой, природой, достопримечательностями. Но главная цель поездки – конечно же, остаётся отдыхом на ласковом пляже.
+                 Мы заботимся об отдыхе каждого туриста, поэтому остаётся на связи не только во время заключения договора, но и в процессе поездки, а также после неё. Пишите отзывы о туристической компании Bon voyage, чтобы мы стали ещё лучше!
+              </p>
+            </div>
+            <div class="button about_button"><a href="#">Узнай больше</a></div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="about_image"><img src="{% static 'travel_app/images/about_1.jpg' %}" alt=""></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Milestones -->
+
+  <div class="milestones">
+
+  </div>
+
+  <!-- Why Choose Us -->
+
+  <div class="why">
+    <div class="background_image" style="background-image:url(/static/travel_app/images/why.jpg)"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_subtitle">просто удивительные места</div>
+          <div class="section_title"><h2>Почему нужно выбрать нас?</h2></div>
+        </div>
+      </div>
+      <div class="row why_row">
+
+        <!-- Why item -->
+        <div class="col-lg-4 why_col">
+          <div class="why_item">
+            <div class="why_image">
+              <img src="{% static 'travel_app/images/why_1.jpg' %}" alt="">
+              <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static 'travel_app/images/why_1.svg' %}" alt="">
+              </div>
+            </div>
+            <div class="why_content text-center">
+              <div class="why_title">Быстрый сервис</div>
+              <div class="why_text">
+                <p>Мы поможем Вам в кратчайшие сроки выбрать и оформить тур</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why item -->
+        <div class="col-lg-4 why_col">
+          <div class="why_item">
+            <div class="why_image">
+              <img src="{% static 'travel_app/images/why_2.jpg' %}" alt="">
+              <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static 'travel_app/images/why_2.svg' %}" alt="">
+              </div>
+            </div>
+            <div class="why_content text-center">
+              <div class="why_title">Отличная команда</div>
+              <div class="why_text">
+                <p>Наша команда состоит из специалистов высокого уровня.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why item -->
+        <div class="col-lg-4 why_col">
+          <div class="why_item">
+            <div class="why_image">
+              <img src="{% static 'travel_app/images/why_3.jpg' %}" alt="">
+              <div class="why_icon d-flex flex-column align-items-center justify-content-center">
+                <img src="{% static 'travel_app/images/why_3.svg' %}" alt="">
+              </div>
+            </div>
+            <div class="why_content text-center">
+              <div class="why_title">Лучшие сделки</div>
+              <div class="why_text">
+                <p>Мы подберем для Вас тур для любого бюджета.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Team -->
+
+  <div class="team">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <div class="section_title"><h2>Наша команда</h2></div>
+        </div>
+      </div>
+      <div class="row team_row">
+
+        <!-- Team Item -->
+        <div class="col-xl-3 col-md-6 team_col">
+          <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+            <div class="team_image"><img src="{% static 'travel_app/images/team_1.jpg' %}" alt=""></div>
+            <div class="team_content">
+              <div class="team_title"><a href="#">Маргарита, специалист по туризму</a></div>
+              <div class="team_text">
+                <p>"Я люблю путешествовать и делиться своими знаниями. Нет ничего ценнее счастливых глаз  своих туристов, только что вернувшихся из поездки."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Item -->
+        <div class="col-xl-3 col-md-6 team_col">
+          <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+            <div class="team_image"><img src="{% static 'travel_app/images/team_2.jpg' %}" alt=""></div>
+            <div class="team_content">
+              <div class="team_title"><a href="#">Николай, специалист по туризму</a></div>
+              <div class="team_text">
+                <p>"Путешествие – это не просто поездка, не просто очередной отпуск, это целый процесс, процесс открытия самого себя."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Item -->
+        <div class="col-xl-3 col-md-6 team_col">
+          <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+            <div class="team_image"><img src="{% static 'travel_app/images/team_3.jpg' %}" alt=""></div>
+            <div class="team_content">
+              <div class="team_title"><a href="#">Михаил, специалист по туризму</a></div>
+              <div class="team_text">
+                <p>"Я очень люблю свою работу и выполняю ее всегда с большим удовольствием. В своей профессии считаю самым главным уметь найти идеальный подход к каждому туристу в выборе страны, отеля и комфортного отдыха!"</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Item -->
+        <div class="col-xl-3 col-md-6 team_col">
+          <div class="team_item d-flex flex-column align-items-center justify-content-start text-center">
+            <div class="team_image"><img src="{% static 'travel_app/images/team_4.jpg' %}" alt=""></div>
+            <div class="team_content">
+              <div class="team_title"><a href="#">Константин, специалист по туризму</a></div>
+              <div class="team_text">
+                <p>"Всегда рад помочь подобрать качественный, соответствующий всем пожеланиям вариант своим клиентам, которые впоследствии становятся моими друзьями."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock%}
